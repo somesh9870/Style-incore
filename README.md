@@ -4,3 +4,15 @@ It is a fashion-forward apparel brand and style community whose purpose is to cr
 
 
 # [Vercel Deployed Link](https://style-incore-express.netlify.app/)
+
+# Pages and Features :
+ 
+ Home Page
+ 
+ Navbar & Footer
+ 
+ Product Pages
+   - Men page
+   - Women page
+
+Login and SignUp Page
