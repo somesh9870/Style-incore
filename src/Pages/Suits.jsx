@@ -32,7 +32,6 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
-// import Truncate from "react-truncate";
 import CardItem from "../Components/CardItem";
 import axios from "axios";
 import NotFound from "../Components/NotFound";
