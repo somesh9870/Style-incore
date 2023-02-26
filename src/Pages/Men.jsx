@@ -9,7 +9,7 @@ import {
   } from "@chakra-ui/react";
   import React from "react";
   import ShopCategory from "../Components/ShopCategory";
-  import MainVideo from "../project_data/MenVideo.webm";
+  import MainVideo from "../ProjectData/MainVideo.mp4";
   import Community from "../Components/Community";
   import ShopEasyWay from "../Components/ShopEasyWay";
   
