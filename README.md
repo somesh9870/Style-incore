@@ -17,6 +17,9 @@ Product Pages
 - Men page
 - Women page
 
+
+Cart Page
+
 Login and SignUp Page
 
 
