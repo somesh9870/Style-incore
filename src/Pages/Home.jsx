@@ -168,7 +168,7 @@ const Home = () => {
         <SimpleGrid
           columns={[1, 1, 2, 3]}
           mt={6}
-          p={6}
+          p={[1, 1, 1, 6]}
           gap={8}
           justify="{center}"
           // width="100%"

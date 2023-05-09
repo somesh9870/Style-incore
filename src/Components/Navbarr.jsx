@@ -4,7 +4,6 @@ import {
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
   Icon,
@@ -34,13 +33,19 @@ export default function Navbarr() {
   return (
     <Box>
       <Box display="flex" p={2} bg="black" color={"white"} alignItems="center">
-        <Text as="b" fontSize="12px">
+        <Text as="b" fontSize={["8px", "10px", "12px"]}>
           APP EXCLUSIVE | $100 off $250 | $200 off $500 | Code: 1176{" "}
-          <Link color="teal.500" href="#" fontSize="14px" ml={1} mr={1}>
+          <Link
+            color="teal.500"
+            href="#"
+            fontSize={["8px", "10px", "12px"]}
+            ml={1}
+            mr={1}
+          >
             {" "}
             Exclusion & Details{" "}
           </Link>
-          <Link color="teal.500" href="#" fontSize="14px">
+          <Link color="teal.500" href="#" fontSize={["8px", "10px", "12px"]}>
             {" "}
             DOWNLOAD THE APP SHOP NOW
           </Link>
@@ -75,27 +80,25 @@ export default function Navbarr() {
         <Text
           fontSize={"sm"}
           color="#000000"
-          display={["none", "none", "none", "block"]}
+          display={["none", "none", "block"]}
           justify={"flex-start"}
         >
           Free Shipping on Orders $50+ Details
         </Text>
 
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "center" }}>
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "center" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-          >
-            <RouterLink to={"/"}>
-              <Image
-                w={"200px"}
-                objectFit="cover"
-                src={style_incore_logo}
-                alt="Dan Abramov"
-              />
-            </RouterLink>
-          </Text>
+        <Flex
+          flex={{ base: 1 }}
+          justify={{ base: "center", md: "center" }}
+          // border="1px solid red"
+        >
+          <RouterLink to={"/"}>
+            <Image
+              w={"200px"}
+              objectFit="cover"
+              src={style_incore_logo}
+              alt="Dan Abramov"
+            />
+          </RouterLink>
 
           {/* <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
@@ -107,8 +110,10 @@ export default function Navbarr() {
           justify={"flex-end"}
           direction={"row"}
           spacing={6}
+          // border="1px solid red"
         >
           <IconButton
+            display={{ base: "none", md: "inline-flex" }}
             aria-label="Search database"
             _hover={{
               bg: "blue.300",
@@ -126,10 +131,14 @@ export default function Navbarr() {
             Sign In
           </Button> */}
           <RouterLink to={"/signup"}>
-            <IconButton icon={<AiOutlineUser />} aria-label="Shopping Cart" />
+            <IconButton icon={<AiOutlineUser />} aria-label="Sign Up" />
           </RouterLink>
           {/* <IconButton icon={<FaShoppingCart />} aria-label="Shopping Cart" /> */}
-          <IconButton icon={<BsCart />} aria-label="Shopping Cart" />
+          <IconButton
+            icon={<BsCart />}
+            aria-label="Shopping Cart"
+            display={{ base: "none", md: "inline-flex" }}
+          />
         </Stack>
       </Flex>
 
