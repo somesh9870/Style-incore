@@ -25,7 +25,8 @@ import {
   SearchIcon,
 } from "@chakra-ui/icons";
 import style_incore_logo from "./style_incore_logo.png";
-import Signup from "../Pages/Signup";
+import { AiOutlineUser } from "react-icons/ai";
+import { BsCart } from "react-icons/bs";
 
 export default function Navbarr() {
   const { isOpen, onToggle } = useDisclosure();
@@ -108,10 +109,9 @@ export default function Navbarr() {
           spacing={6}
         >
           <IconButton
-            colorScheme="blue"
             aria-label="Search database"
             _hover={{
-              bg: "blue.900",
+              bg: "blue.300",
             }}
             icon={<SearchIcon />}
           />
@@ -125,21 +125,11 @@ export default function Navbarr() {
           >
             Sign In
           </Button> */}
-          <RouterLink to={'/signup'}>
-            <Button
-              // display={{ base: "none", md: "inline-flex" }}
-              fontSize={"sm"}
-              fontWeight={600}
-              color={"white"}
-              bg={"pink.400"}
-              href={"#"}
-              _hover={{
-                bg: "pink.500",
-              }}
-            >
-              User
-            </Button>
+          <RouterLink to={"/signup"}>
+            <IconButton icon={<AiOutlineUser />} aria-label="Shopping Cart" />
           </RouterLink>
+          {/* <IconButton icon={<FaShoppingCart />} aria-label="Shopping Cart" /> */}
+          <IconButton icon={<BsCart />} aria-label="Shopping Cart" />
         </Stack>
       </Flex>
 

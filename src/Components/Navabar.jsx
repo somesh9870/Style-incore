@@ -34,7 +34,6 @@ export default function Navbar() {
 
   return (
     <>
-      
       {/* <Box>
         <Stack
           flex={{ base: 1, md: 0 }}
@@ -115,8 +114,8 @@ export default function Navbar() {
               aria-label={"Toggle Navigation"}
             />
           </Flex> */}
-          <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-            <Flex display={{ base: "none", md: "flex" }} alignItems={"center"} >
+          <Flex flex={{ base: 1 }} justify={{ base: "center", md: "center" }}>
+            <Flex display={{ base: "none", md: "flex" }} alignItems={"center"}>
               <DesktopNav />
             </Flex>
           </Flex>
@@ -136,17 +135,16 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Stack direction={"row"} spacing={7} color={"#1a1819"} fontWeight={700}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <RouterLink 
+              <RouterLink
                 to={navItem.path}
                 p={2}
                 href={navItem.href ?? "#"}
                 fontSize={"sm"}
-                fontWeight={500}
                 color={linkColor}
                 _hover={{
                   textDecoration: "none",
