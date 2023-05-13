@@ -23,7 +23,7 @@ function CartPage() {
           IN BAG
         </Text>{" "}
       </Center>
-
+{/* 
       <Box>
         <Flex>
           <Image
@@ -38,9 +38,9 @@ function CartPage() {
             <Text>Price: Rs. 298</Text>
           </Box>
         </Flex>
-      </Box>
+      </Box> */}
 
-      {/* <EmptyCart /> */}
+      <EmptyCart />
     </Box>
   );
 }
