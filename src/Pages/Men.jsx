@@ -17,7 +17,7 @@ import {
     const data = [
       {
         name: "JEANS",
-        img: "https://www.express.com/content/dam/express/2023/projects/web/home-landing/01-january/1227-digital-20770-mlp/-dt/cat-1-dt.jpg",
+        img: "https://www.express.com/content/dam/express/2023/projects/web/home-landing/05-may/0424-digital-23766-hp-na/dt/0424-hp-dt_01_06.jpg",
         redName: "jeans",
       },
       {

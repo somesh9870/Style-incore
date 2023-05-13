@@ -12,6 +12,8 @@ import Sale from "./Sale";
 import Signup from "./Signup";
 import Suits from "./Suits";
 import Women from "./Women";
+import NotFound from "../Components/NotFound";
+import CartPage from "./CartPage";
 
 const AllRoutes = () => {
   return (
@@ -25,14 +27,12 @@ const AllRoutes = () => {
         <Route path="/sale" element={<Sale />} />
         <Route path="/suits" element={<Suits />} />
         <Route path="/suits/:user_id" element={<ProductDetails />} />
-        <Route
-          path="/community"
-          element={<Community />}
-        />
+        <Route path="/community" element={<Community />} />
         <Route path="/labels" element={<Text>Welcome to Labels Page</Text>} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="*" element={<Text>ERROR 404: PageNotFound</Text>} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

@@ -3,87 +3,24 @@ import {
   Box,
   Flex,
   Text,
-  IconButton,
-  Button,
   Stack,
-  Collapse,
   Icon,
   Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
-  useDisclosure,
-  useColorMode,
-  Image,
-  Center,
+
 } from "@chakra-ui/react";
 import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import style_incore_logo from "./style_incore_logo.png";
 
 export default function Navbar() {
-  const { isOpen, onToggle } = useDisclosure();
-  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <>
-      {/* <Box>
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={"flex-end"}
-          direction={"row"}
-          spacing={6}
-          border={"1px solid black"}
-          p={2}
-        >
-          <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-            <Flex display={{ base: "none", md: "flex" }} ml={10}>
-              <Text>Free Shipping on Orders $50+Details</Text>
-              <RouterLink to={'/'}>
-                <Image
-                  ml={"300px"}
-                  w={"150px"}
-                  objectFit="cover"
-                  src={style_incore_logo}
-                  alt="Dan Abramov"
-                />
-              </RouterLink>
-            </Flex>
-          </Flex>
-          <Button onClick={toggleColorMode}>
-            {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-          </Button>
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-          >
-            Sign In
-          </Button>
-          <Button
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"pink.400"}
-            href={"#"}
-            _hover={{
-              bg: "pink.300",
-            }}
-          >
-            Sign Up
-          </Button>
-        </Stack>
-      </Box> */}
+
       <Box>
         <Flex
           bg={useColorModeValue("white", "gray.800")}
@@ -96,24 +33,7 @@ export default function Navbar() {
           borderColor={useColorModeValue("gray.200", "gray.900")}
           align={"center"}
         >
-          {/* <Flex
-            flex={{ base: 1, md: "auto" }}
-            ml={{ base: -2 }}
-            display={{ base: "flex", md: "none" }}
-          >
-            <IconButton
-              onClick={onToggle}
-              icon={
-                isOpen ? (
-                  <CloseIcon w={3} h={3} />
-                ) : (
-                  <HamburgerIcon w={5} h={5} />
-                )
-              }
-              variant={"ghost"}
-              aria-label={"Toggle Navigation"}
-            />
-          </Flex> */}
+         
           <Flex flex={{ base: 1 }} justify={{ base: "center", md: "center" }}>
             <Flex display={{ base: "none", md: "flex" }} alignItems={"center"}>
               <DesktopNav />
@@ -121,9 +41,7 @@ export default function Navbar() {
           </Flex>
         </Flex>
 
-        {/* <Collapse in={isOpen} animateOpacity>
-          <MobileNav />
-        </Collapse> */}
+        
       </Box>
     </>
   );
@@ -215,197 +133,147 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
   );
 };
 
-// const MobileNav = () => {
-//   return (
-//     <Stack
-//       bg={useColorModeValue("white", "gray.800")}
-//       p={4}
-//       display={{ md: "none" }}
-//     >
-//       {NAV_ITEMS.map((navItem) => (
-//         <MobileNavItem key={navItem.label} {...navItem} />
-//       ))}
-//     </Stack>
-//   );
-// };
 
-// const MobileNavItem = ({ label, children, href }) => {
-//   const { isOpen, onToggle } = useDisclosure();
-
-//   return (
-//     <Stack spacing={4} onClick={children && onToggle}>
-//       <Flex
-//         py={2}
-//         as={Link}
-//         href={href ?? "#"}
-//         justify={"space-between"}
-//         align={"center"}
-//         _hover={{
-//           textDecoration: "none",
-//         }}
-//       >
-//         <Text
-//           fontWeight={600}
-//           color={useColorModeValue("gray.600", "gray.200")}
-//         >
-//           {label}
-//         </Text>
-//         {children && (
-//           <Icon
-//             as={ChevronDownIcon}
-//             transition={"all .25s ease-in-out"}
-//             transform={isOpen ? "rotate(180deg)" : ""}
-//             w={6}
-//             h={6}
-//           />
-//         )}
-//       </Flex>
-
-//       <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
-//         <Stack
-//           mt={2}
-//           pl={4}
-//           borderLeft={1}
-//           borderStyle={"solid"}
-//           borderColor={useColorModeValue("gray.200", "gray.700")}
-//           align={"start"}
-//         >
-//           {children &&
-//             children.map((child) => (
-//               <Link key={child.label} py={2} href={child.href}>
-//                 {child.label}
-//               </Link>
-//             ))}
-//         </Stack>
-//       </Collapse>
-//     </Stack>
-//   );
-// };
 
 const NAV_ITEMS = [
   {
     label: "WOMEN",
     path: "/women",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    // children: [
+    //   {
+    //     label: "Explore Design Work",
+    //     subLabel: "Trending Design to inspire you",
+    //     href: "#",
+    //   },
+    //   {
+    //     label: "New & Noteworthy",
+    //     subLabel: "Up-and-coming Designers",
+    //     href: "#",
+    //   },
+    // ],
   },
   {
     label: "MEN",
     path: "/men",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
+    // children: [
+    //   {
+    //     label: "Job Board",
+    //     subLabel: "Find your dream design job",
+    //     href: "#",
+    //   },
+    //   {
+    //     label: "Freelance Projects",
+    //     subLabel: "An exclusive list for contract work",
+    //     href: "#",
+    //   },
+    // ],
   },
   {
     label: "JEANS",
     path: "/jeans",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    // children: [
+    //   {
+    //     label: "Explore Design Work",
+    //     subLabel: "Trending Design to inspire you",
+    //     href: "#",
+    //   },
+    //   {
+    //     label: "New & Noteworthy",
+    //     subLabel: "Up-and-coming Designers",
+    //     href: "#",
+    //   },
+    // ],
   },
   {
     label: "NEW",
     path: "/new",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    // children: [
+    //   {
+    //     label: "Explore Design Work",
+    //     subLabel: "Trending Design to inspire you",
+    //     href: "#",
+    //   },
+    //   {
+    //     label: "New & Noteworthy",
+    //     subLabel: "Up-and-coming Designers",
+    //     href: "#",
+    //   },
+    // ],
   },
   {
     label: "SALE",
     path: "/sale",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    // children: [
+    //   {
+    //     label: "Explore Design Work",
+    //     subLabel: "Trending Design to inspire you",
+    //     href: "#",
+    //   },
+    //   {
+    //     label: "New & Noteworthy",
+    //     subLabel: "Up-and-coming Designers",
+    //     href: "#",
+    //   },
+    // ],
   },
   {
-    label: "STYLE TRIAL RENTAL",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    label: "STYLE TRIAL",
+    // children: [
+    //   {
+    //     label: "Explore Design Work",
+    //     subLabel: "Trending Design to inspire you",
+    //     href: "#",
+    //   },
+    //   {
+    //     label: "New & Noteworthy",
+    //     subLabel: "Up-and-coming Designers",
+    //     href: "#",
+    //   },
+    // ],
+  },
+  {
+    label: "RENTAL",
+    // children: [
+    //   {
+    //     label: "Explore Design Work",
+    //     subLabel: "Trending Design to inspire you",
+    //     href: "#",
+    //   },
+    //   {
+    //     label: "New & Noteworthy",
+    //     subLabel: "Up-and-coming Designers",
+    //     href: "#",
+    //   },
+    // ],
   },
   {
     label: "COMMUNITY",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    // children: [
+    //   {
+    //     label: "Explore Design Work",
+    //     subLabel: "Trending Design to inspire you",
+    //     href: "#",
+    //   },
+    //   {
+    //     label: "New & Noteworthy",
+    //     subLabel: "Up-and-coming Designers",
+    //     href: "#",
+    //   },
+    // ],
   },
   {
     label: "LABELS WE LOVE",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    // children: [
+    //   {
+    //     label: "Explore Design Work",
+    //     subLabel: "Trending Design to inspire you",
+    //     href: "#",
+    //   },
+    //   {
+    //     label: "New & Noteworthy",
+    //     subLabel: "Up-and-coming Designers",
+    //     href: "#",
+    //   },
+    // ],
   },
 ];

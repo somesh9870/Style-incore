@@ -130,15 +130,17 @@ export default function Navbarr() {
           >
             Sign In
           </Button> */}
-          <RouterLink to={"/signup"}>
+          <RouterLink to={"/login"}>
             <IconButton icon={<AiOutlineUser />} aria-label="Sign Up" />
           </RouterLink>
           {/* <IconButton icon={<FaShoppingCart />} aria-label="Shopping Cart" /> */}
-          <IconButton
-            icon={<BsCart />}
-            aria-label="Shopping Cart"
-            display={{ base: "none", md: "inline-flex" }}
-          />
+          <RouterLink to={"/cart"}>
+            <IconButton
+              icon={<BsCart />}
+              aria-label="Shopping Cart"
+              display={{ base: "none", md: "inline-flex" }}
+            />
+          </RouterLink>
         </Stack>
       </Flex>
 

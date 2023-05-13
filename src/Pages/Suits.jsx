@@ -64,7 +64,7 @@ const Suits = () => {
   const [total, setTotal] = useState(0);
   //  dkjhkljfdsh
 
-  const fetchData = async (endPoint) => {
+  const fetchData = async (endPoint, order = "desc") => {
     localStorage.setItem("endPoint", JSON.stringify(endPoint));
     try {
       endPoint === "dressPants"
@@ -74,7 +74,7 @@ const Suits = () => {
         : setName("FULL SUITS");
       setLoading(true);
       let res = await axios.get(
-        `https://mock-server-dqmr.onrender.com/${endPoint}?_limit=12&_sort=price&_order=desc`
+        `https://mock-server-dqmr.onrender.com/${endPoint}?_limit=12&_sort=price&_order=${order}`
       );
       console.log(res.data);
       setData(res.data);
@@ -87,15 +87,13 @@ const Suits = () => {
   };
 
   const handleSorting = (e) => {
-    console.log(e.target.value);
-    fetchData();
+    // console.log(e.target.value);
+    fetchData("mens_data", e);
   };
 
   useEffect(() => {
     fetchData("mens_data");
   }, []);
-
-  useEffect(() => {}, []);
 
   const labelsData = [
     {
@@ -326,12 +324,12 @@ const Suits = () => {
                 By:
               </Text>
               <Select
-                placeholder="Relevance"
-                onChange={(e) => handleSorting(e)}
+                placeholder="Price"
+                onChange={(e) => handleSorting(e.target.value)}
               >
-                <option value="lth">Price Low to High</option>
-                <option value="htl">Price High to Low</option>
-                <option value="arrivals">New Arrivals</option>
+                <option value="asc">Price Low to High</option>
+                <option value="desc">Price High to Low</option>
+                {/* <option value="arrivals">New Arrivals</option> */}
               </Select>
             </Box>
           </Flex>
