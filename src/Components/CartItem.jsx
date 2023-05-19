@@ -29,7 +29,7 @@ const CartItem = () => {
             alt="Caffe Latte"
           />
           <Box textAlign={"start"} p={5} w={"70%"} fontSize={"14px"}>
-            <Text fontSize={"1rem"}>
+            <Text fontSize={"1rem"} mb={1}>
               Extra Slim Pinstripe Wool-Blend Modern Tech Suit Jacket
             </Text>
             <Text>Size: 42</Text>
@@ -46,7 +46,7 @@ const CartItem = () => {
           border={"1px solid black"}
           textAlign={"start"}
           p={5}
-        //   py={5}
+          //   py={5}
           display={"grid"}
         >
           <Radio defaultChecked>Shipping</Radio>
@@ -77,16 +77,15 @@ const CartItem = () => {
       <Flex justify="space-between" px={5}>
         <Flex w={"30%"} gap={10} justify={"space-between"}>
           <Select placeholder="Qty: 1">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">8</option>
-            <option value="10">10</option>
+            <option value="1">Qty: 1</option>
+            <option value="2">Qty: 2</option>
+            <option value="3">Qty: 3</option>
+            <option value="4">Qty: 4</option>
+            <option value="5">Qty: 5</option>
+            <option value="6">Qty: 6</option>
+            <option value="7">Qty: 7</option>
+            <option value="8">Qty: 8</option>
+            <option value="9">Qty: 9</option>
           </Select>
 
           <Text mt={2} fontWeight={700} w={"80%"}>

@@ -34,7 +34,7 @@ export default function Navbarr() {
     <Box>
       <Box display="flex" p={2} bg="black" color={"white"} alignItems="center">
         <Text as="b" fontSize={["8px", "10px", "12px"]}>
-          APP EXCLUSIVE | $100 off $250 | $200 off $500 | Code: 1176{" "}
+          APP EXCLUSIVE | ₹100 off ₹250 | ₹200 off ₹500 | Code: 1176{" "}
           <Link
             color="teal.500"
             href="#"
@@ -83,7 +83,7 @@ export default function Navbarr() {
           display={["none", "none", "block"]}
           justify={"flex-start"}
         >
-          Free Shipping on Orders $50+ Details
+          Free Shipping on Orders ₹50+ Details
         </Text>
 
         <Flex

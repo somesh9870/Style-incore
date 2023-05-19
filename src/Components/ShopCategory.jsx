@@ -17,7 +17,7 @@ import { Link as RouterLink } from "react-router-dom";
 const ShopCategory = ({ img, name, redName }) => {
   return (
     <>
-      <RouterLink to={`/${redName}`}>
+      <RouterLink to={`/₹{redName}`}>
         <Box color="#000000">
           <Image
             src={img}
