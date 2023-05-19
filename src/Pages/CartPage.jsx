@@ -51,8 +51,8 @@ function CartPage() {
           </Center>
 
           <CartItem />
-          <CartItem />
-          <CartItem />
+          {/* <CartItem /> */}
+          {/* <CartItem /> */}
         </Box>
 
         {/* Summary */}
