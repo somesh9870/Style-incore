@@ -45,8 +45,8 @@ const CartItem = () => {
           w="25%"
           border={"1px solid black"}
           textAlign={"start"}
-          p={2}
-          py={5}
+          p={5}
+        //   py={5}
           display={"grid"}
         >
           <Radio defaultChecked>Shipping</Radio>

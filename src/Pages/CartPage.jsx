@@ -19,7 +19,7 @@ function CartPage() {
   return (
     <Box bgColor={"whitesmoke"}>
       <Flex gap={10} w={"95%"} m={"auto"}>
-        <Box w={"70%"} border={"1px solid gray"} p={5}>
+        <Box w={"70%"} p={5}>
           {/* top header of bag */}
           <Flex
             bgColor={"white"}
@@ -50,6 +50,8 @@ function CartPage() {
             </Text>{" "}
           </Center>
 
+          <CartItem />
+          <CartItem />
           <CartItem />
         </Box>
 
