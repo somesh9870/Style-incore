@@ -34,6 +34,8 @@ export default function Login() {
       );
       console.log(res.data);
 
+      localStorage.setItem("isAuth", true);
+
       toast({
         title: " Hurray! ",
         description: "Successfully Logged in",

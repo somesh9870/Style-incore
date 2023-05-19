@@ -8,6 +8,13 @@ import {
   Collapse,
   Icon,
   Link,
+  AlertDialog,
+  AlertDialogBody,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogContent,
+  AlertDialogOverlay,
+  AlertDialogCloseButton,
   // Popover,
   // PopoverTrigger,
   // PopoverContent,
@@ -25,9 +32,15 @@ import {
 import style_incore_logo from "./style_incore_logo.png";
 import { AiOutlineUser } from "react-icons/ai";
 import { BsCart } from "react-icons/bs";
+import { BiLogOut } from "react-icons/bi";
 
 export default function Navbarr() {
   const { isOpen, onToggle } = useDisclosure();
+
+  const handleLogout = () => {
+    localStorage.removeItem("isAuth");
+    window.location.reload();
+  };
 
   return (
     <Box>
@@ -119,20 +132,19 @@ export default function Navbarr() {
             }}
             icon={<SearchIcon />}
           />
-          {/* <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-            color="#000000"
-          >
-            Sign In
-          </Button> */}
+
           <RouterLink to={"/login"}>
             <IconButton icon={<AiOutlineUser />} aria-label="Sign Up" />
           </RouterLink>
-          {/* <IconButton icon={<FaShoppingCart />} aria-label="Shopping Cart" /> */}
+
+          {/* <RouterLink> */}
+          <IconButton
+            onClick={handleLogout}
+            icon={<BiLogOut />}
+            aria-label="Log out"
+          />
+          {/* </RouterLink> */}
+
           <RouterLink to={"/cart"}>
             <IconButton
               icon={<BsCart />}

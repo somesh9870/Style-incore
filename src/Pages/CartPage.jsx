@@ -138,7 +138,12 @@ function CartPage() {
 
               {/* checkout buttons */}
               <Stack>
-                <Button p={7} color={"white"} bgColor="black">
+                <Button
+                  p={7}
+                  color={"white"}
+                  _hover={{ bgColor: "#33363D", color: "white" }}
+                  bgColor="black"
+                >
                   CHECKOUT
                 </Button>
               </Stack>
@@ -173,7 +178,7 @@ function CartPage() {
             <Flex gap={5} p={4}>
               <TiMessages fontSize={40} />
               <Text textAlign={"start"} fontSize={"16px"}>
-                Need help or styling advice? Chat with us 24/7 on express.com.
+                Need help or styling advice? Chat with us 24/7 on style-incore
               </Text>
             </Flex>
           </Box>

@@ -1,19 +1,20 @@
 import { Text } from "@chakra-ui/react";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Community from "./Community";
-import Home from "./Home";
-import Jeans from "./Jeans";
-import Login from "./Login";
-import Men from "./Men";
-import New from "./New";
-import ProductDetails from "./ProductDetails";
-import Sale from "./Sale";
-import Signup from "./Signup";
-import Suits from "./Suits";
-import Women from "./Women";
+import Home from "../Pages/Home";
+import Women from "../Pages/Women";
+import Men from "../Pages/Men";
+import Jeans from "../Pages/Jeans";
+import New from "../Pages/New";
+import Sale from "../Pages/Sale";
+import Suits from "../Pages/Suits";
+import ProductDetails from "../Pages/ProductDetails";
+import Community from "../Pages/Community";
+import Signup from "../Pages/Signup";
+import Login from "../Pages/Login";
+import CartPage from "../Pages/CartPage";
 import NotFound from "../Components/NotFound";
-import CartPage from "./CartPage";
+import PrivateRoute from "./PrivateRoute";
 
 const AllRoutes = () => {
   return (
@@ -31,7 +32,14 @@ const AllRoutes = () => {
         <Route path="/labels" element={<Text>Welcome to Labels Page</Text>} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/cart" element={<CartPage />} />
+        <Route
+          path="/cart"
+          element={
+            <PrivateRoute>
+              <CartPage />
+            </PrivateRoute>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
