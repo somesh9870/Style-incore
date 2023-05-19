@@ -1,17 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Button,
-  Card,
-  Flex,
-  Grid,
-  Heading,
-  Image,
-  Link,
-  SimpleGrid,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Heading, Image, Link, SimpleGrid, Text } from "@chakra-ui/react";
 const ShopEasyWay = () => {
   return (
     <>
@@ -19,17 +7,22 @@ const ShopEasyWay = () => {
         <Heading as={"h4"} size="lg">
           SHOP THE EASY WAY
         </Heading>
-        <SimpleGrid p={[3,3,3,6]} columns={[2, 2, 4, 4]} gap={[5,5,5,10]} margin={"auto"}>
+        <SimpleGrid
+          p={[3, 3, 3, 6]}
+          columns={[2, 2, 4, 4]}
+          gap={[5, 5, 5, 10]}
+          margin={"auto"}
+        >
           <Box
             alignItems="center"
             color="#000000"
-            borderRight={['none','none','none',"1px solid #000000"]}
+            borderRight={["none", "none", "none", "1px solid #000000"]}
             borderRadius={0}
           >
             <Image
               // boxSize="50px"
               objectFit="cover"
-              height={'50px'}
+              height={"50px"}
               src="https://www.express.com/content/dam/express/2022/projects/web/home-landing/12-december/1215-digital-22583-hp-revert/bopis-dt.png"
               alt="Dan Abramov"
             />
@@ -42,7 +35,7 @@ const ShopEasyWay = () => {
           <Box
             alignItems="center"
             color="#000000"
-            borderRight={['none','none','none',"1px solid #000000"]}
+            borderRight={["none", "none", "none", "1px solid #000000"]}
             borderRadius={0}
           >
             <Image
@@ -60,11 +53,11 @@ const ShopEasyWay = () => {
           <Box
             alignItems="center"
             color="#000000"
-            borderRight={['none','none','none',"1px solid #000000"]}
+            borderRight={["none", "none", "none", "1px solid #000000"]}
             borderRadius={0}
           >
             <Image
-              height={'50px'}
+              height={"50px"}
               objectFit="cover"
               src="https://www.express.com/content/dam/express/2022/projects/web/home-landing/12-december/1215-digital-22583-hp-revert/cc-dt.png"
               alt="Dan Abramov"
@@ -73,9 +66,14 @@ const ShopEasyWay = () => {
             <Text fontWeight={300}>Open and use for exclusive perks.</Text>
             <Link fontWeight={700}>LEARN MORE</Link>
           </Box>
-          <Box  alignItems="center" justifyContent={'center'} color="#000000" borderRadius={0}>
+          <Box
+            alignItems="center"
+            justifyContent={"center"}
+            color="#000000"
+            borderRadius={0}
+          >
             <Image
-              height={'50px'}
+              height={"50px"}
               objectFit="cover"
               src="https://www.express.com/content/dam/express/2022/projects/web/home-landing/12-december/1215-digital-22583-hp-revert/chat-dt.png"
               alt="Dan Abramov"

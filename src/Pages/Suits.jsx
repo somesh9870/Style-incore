@@ -74,7 +74,7 @@ const Suits = () => {
         : setName("FULL SUITS");
       setLoading(true);
       let res = await axios.get(
-        `https://mock-server-dqmr.onrender.com/₹{endPoint}?_limit=12&_sort=price&_order=₹{order}`
+        `https://mock-server-dqmr.onrender.com/${endPoint}?_limit=12&_sort=price&_order=${order}`
       );
       console.log(res.data);
       setData(res.data);
@@ -314,7 +314,7 @@ const Suits = () => {
             alignItems="center"
             mb={6}
           >
-            <Heading size={"lg"}>{`MEN'S ₹{name}`}</Heading>
+            <Heading size={"lg"}>{`MEN'S ${name}`}</Heading>
 
             <Box display={"flex"}>
               <Text py={2} fontSize={"12px"}>
@@ -336,7 +336,7 @@ const Suits = () => {
 
           <SimpleGrid columns={[1, 1, 2, 3]} gap={6}>
             {data.map((el) => (
-              <RouterLink to={`/suits/₹{el.id}`}>
+              <RouterLink to={`/suits/${el.id}`}>
                 <CardItem
                   img={el.img}
                   brand={el.brand}

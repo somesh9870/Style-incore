@@ -1,23 +1,11 @@
 import React from "react";
-import {
-  Box,
-  Button,
-  Card,
-  Flex,
-  Grid,
-  Heading,
-  Image,
-  Link,
-  SimpleGrid,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Image, Text } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
 const ShopCategory = ({ img, name, redName }) => {
   return (
     <>
-      <RouterLink to={`/₹{redName}`}>
+      <RouterLink to={`/${redName}`}>
         <Box color="#000000">
           <Image
             src={img}

@@ -1,22 +1,18 @@
 import {
   Box,
-  chakra,
   Container,
   Stack,
   Text,
   Image,
   Flex,
-  VStack,
   Button,
   Heading,
   SimpleGrid,
-  StackDivider,
   useColorModeValue,
-  VisuallyHidden,
   List,
   ListItem,
 } from "@chakra-ui/react";
-import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+// import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { MdLocalShipping } from "react-icons/md";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
@@ -32,7 +28,7 @@ const ProductDetails = () => {
 
   const fetchProductDetails = async (id) => {
     let res = await axios.get(
-      `https://mock-server-dqmr.onrender.com/₹{endPoint}/₹{id}`
+      `https://mock-server-dqmr.onrender.com/${endPoint}/${id}`
     );
 
     setData(res.data);
