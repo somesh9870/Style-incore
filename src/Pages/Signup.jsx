@@ -27,8 +27,10 @@ import axios from "axios";
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
 
-  const [email, setEmail] = useState("eve.holt@reqres.in");
-  const [password, setPassword] = useState("pistol");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
   const toast = useToast();
 
   //   const handleInput = (e) => {
@@ -41,13 +43,19 @@ export default function Signup() {
     // e.preventDefault();
     // setUserInfo({ ...formState, userInfo });
     try {
-      let res = await axios.post(`https://reqres.in/api/register`, {
+      const payload = {
         email,
         password,
-      });
+        firstname,
+        lastname,
+      };
+      let res = await axios.post(
+        `https://real-pink-katydid-hat.cyclic.app/user/signup`,
+        payload
+      );
       console.log(res.data);
 
-      return toast({
+      toast({
         title: "Account created.",
         description: "We've created your account for you.",
         status: "success",
@@ -55,10 +63,20 @@ export default function Signup() {
         isClosable: true,
       });
     } catch (error) {
-      console.log(error);
+      console.log("error", error);
+      if (error.response.status === 400) {
+        return toast({
+          title: "Account not created",
+          description: "Email already exists!",
+          status: "error",
+          duration: 9000,
+          isClosable: true,
+        });
+      }
+
       return toast({
         title: "Account not created",
-        description: "Wrong Username or Password",
+        description: "Please try again",
         status: "error",
         duration: 9000,
         isClosable: true,
@@ -93,13 +111,19 @@ export default function Signup() {
               <Box>
                 <FormControl id="firstName" isRequired>
                   <FormLabel>First Name</FormLabel>
-                  <Input type="text" />
+                  <Input
+                    type="text"
+                    onChange={(e) => setFirstname(e.target.value)}
+                  />
                 </FormControl>
               </Box>
               <Box>
                 <FormControl id="lastName">
                   <FormLabel>Last Name</FormLabel>
-                  <Input type="text" />
+                  <Input
+                    type="text"
+                    onChange={(e) => setLastname(e.target.value)}
+                  />
                 </FormControl>
               </Box>
             </HStack>
